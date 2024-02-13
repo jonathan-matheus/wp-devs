@@ -68,5 +68,15 @@ function wpdevs_config()
     add_theme_support(
         'post-thumbnails'
     );
+
+    add_theme_support(
+        'custom-logo',
+        [
+            'width' => 200,
+            'height' => 110,
+            'flex-width' => true,
+            'flex-height' => true
+        ]
+    );
 }
 add_action('after_setup_theme', 'wpdevs_config', 0);
