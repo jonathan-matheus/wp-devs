@@ -50,6 +50,9 @@ function wpdevs_load_scripts()
 }
 add_action('wp_enqueue_scripts', 'wpdevs_load_scripts');
 
+/**
+ * Configurações como registro de menu, e adicionando suportes ao tema.
+ */
 function wpdevs_config()
 {
     register_nav_menus([
@@ -78,9 +81,16 @@ function wpdevs_config()
             'flex-height' => true
         ]
     );
+
+    add_theme_support(
+        'title-tag'
+    );
 }
 add_action('after_setup_theme', 'wpdevs_config', 0);
 
+/**
+ * Registra os sidebars
+ */
 function wpdevs_sidebars()
 {
     register_sidebar(
