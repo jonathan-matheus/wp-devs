@@ -85,6 +85,23 @@ function wpdevs_config()
     add_theme_support(
         'title-tag'
     );
+
+    add_theme_support(
+        'automatic-feed-links'
+    );
+
+    add_theme_support(
+        'html5',
+        [
+            'comment-list',
+            'comment-form',
+            'search-form',
+            'gallery',
+            'caption',
+            'style',
+            'script'
+        ]
+    );
 }
 add_action('after_setup_theme', 'wpdevs_config', 0);
 
@@ -143,3 +160,20 @@ function wpdevs_sidebars()
 }
 
 add_action('widgets_init', 'wpdevs_sidebars');
+
+/**
+ * Essa função verifica se a função wp_body_open() existe.
+ * 
+ * Caso ela não exista, ela adiciona a função.
+ * 
+ * Observação: O intuito desta função é adicionar o wp_body_open() quando o ela
+ * não existir, essa função em questão foi implementada no WordPress a partir da 
+ * versão 5.2, e para manter a compatibilidade com as versões anteriores, essa
+ * função foi adicionada.
+ */
+if (!function_exists('wp_body_open')) {
+    function wp_body_open()
+    {
+        do_action('wp_body_open');
+    }
+}

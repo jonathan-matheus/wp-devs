@@ -49,34 +49,10 @@
                             if ($postlist->have_posts()) {
                                 while ($postlist->have_posts()) {
                                     $postlist->the_post();
-                            ?>
-                                   <article class="latest-news">
-                                       <a href="<?php the_permalink(); ?>">
-                                           <?php the_post_thumbnail('large'); ?>
-                                       </a>
-                                       <h3>
-                                           <a href="<?php the_permalink(); ?>">
-                                               <?php the_title(); ?>
-                                           </a>
-                                       </h3>
-                                       <div class="meta-info">
-                                           <p>
-                                               by <samp><?php the_author_posts_link(); ?></samp>
-                                               Categories: <samp><?php the_category(' '); ?></samp>
-                                               <?php the_tags('Tags: '); ?>
-                                           </p>
-                                       </div>
-                                       <p>
-                                           <samp>
-                                               <?php echo get_the_date(); ?>
-                                           </samp>
-                                       </p>
-                                       <?php the_excerpt(); ?>
-                                   </article>
-                               <?php
+                                    get_template_part('parts/content', 'latest-news');
                                 }
                             } else {
-                                ?>
+                            ?>
                                <p>Nothing yet to be displayed!</p>
                            <?php
                             }
