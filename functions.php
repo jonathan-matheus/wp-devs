@@ -1,4 +1,5 @@
 <?php
+require(get_template_directory() . '/inc/customizer.php');
 
 /**
  * Carrega as folhas de estilo do tema
