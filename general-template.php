@@ -28,7 +28,10 @@ get_header(); ?>
                         }
                     } else {
                         ?>
-                        <p>Nothing yet to be displayed!</p>
+                        <p>
+                            <?php
+                            _e('Nothing yet to be displayed!', 'wp-devs') ?>
+                        </p>
                     <?php
                     }
                     ?>

@@ -6,7 +6,7 @@
                 <?php
                 echo get_theme_mod(
                     'set_copyright',
-                    'Copyright X - All Rights Reserved'
+                    __('Copyright X - All Rights Reserved', 'wp-devs')
                 );
                 ?>
             </p>

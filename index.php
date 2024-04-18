@@ -5,7 +5,7 @@
        <div id="content" class="site-content">
            <div id="primary" class="content-area">
                <main id="main" class="site-main">
-                   <h1>Blog</h1>
+                   <h1><?php _e('Blog', 'wp-devs') ?></h1>
                    <div class="container">
                        <div class="blog-items">
                            <?php
@@ -18,19 +18,19 @@
                                <div class="wpdevs-pagination">
                                    <div class="pages new">
                                        <?php
-                                        previous_posts_link("<< Newer posts");
+                                        previous_posts_link(__('<< Newer posts', 'wp-devs'));
                                         ?>
                                    </div>
                                    <div class="pages old">
                                        <?php
-                                        next_posts_link("Older posts >>");
+                                        next_posts_link(__('Older posts >>', 'wp-devs'));
                                         ?>
                                    </div>
                                </div>
                            <?php
                             } else {
                             ?>
-                               <p>Nothing yet to be displayed!</p>
+                               <p><?php _e('Nothing yet to be displayed! ?', 'wp-devs'); ?></p>
                            <?php
                             }
                             ?>

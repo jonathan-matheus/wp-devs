@@ -8,21 +8,32 @@ get_header();
             <div class="container">
                 <div class="error-404">
                     <header>
-                        <h1>Page not found (404)</h1>
+                        <h1><?php _e('Page not found (404)', 'wp-devs') ?></h1>
                         <p>
-                            Unfortunately, the page you tried to readh does not
-                            exist on this site.
+                            <?php
+                            _e(
+                                'Unfortunately, the page you tried to reach does not exist on this site.',
+                                'wp-devs'
+                            );
+                            ?>
                         </p>
                     </header>
 
                     <div class="error">
-                        <p>How about doing a search?</p>
+                        <p>
+                            <?php
+                            _e(
+                                'How about doing a search?',
+                                'wp-devs'
+                            );
+                            ?>
+                        </p>
                         <?php
                         get_search_form();
                         the_widget(
                             'WP_Widget_Recent_Posts',
                             array(
-                                'title' => 'Latest Posts',
+                                'title' => __('Latest Posts', 'wp-devs'),
                                 'number' => 3
                             )
                         );

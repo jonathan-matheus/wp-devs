@@ -4,14 +4,23 @@
          <?php if ('post' == get_post_type()) { ?>
              <div class="meta-info">
                  <p>
-                     Posted in <?php echo get_the_date(); ?>
-                     by <?php the_author_posts_link(); ?>
+                     <?php
+                        _e('Posted in', 'wp-devs');
+                        echo get_the_date();
+                        _e('by', 'wp-devs');
+                        the_author_posts_link();
+                        ?>
                  </p>
                  <p>
-                     Categories: <?php the_category(' '); ?>
+                     <?php
+                        _e('Categories', 'wp-devs');
+                        ?>:
+                     <?php
+                        the_category(' ');
+                        ?>
                  </p>
                  <p>
-                     <?php the_tags('Tags: '); ?>
+                     <?php the_tags(__('Tags: ', 'wp-devs')); ?>
                  </p>
              </div>
          <?php } ?>

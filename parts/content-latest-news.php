@@ -11,14 +11,22 @@
            </h3>
            <div class="meta-info">
                <p>
-                   by <samp><?php the_author_posts_link(); ?></samp>
+                   <?php _e('by', 'wp-devs'); ?>
+                   <samp>
+                       <?php
+                        the_author_posts_link();
+                        ?>
+                   </samp>
 
-                   <?php if (has_category()) { ?>
-                       Categories: <samp><?php the_category(' '); ?></samp>
+                   <?php if (has_category()) {
+                        _e('Categories', 'wp-devs');
+                    ?>
+                       :
+                       <samp><?php the_category(' '); ?></samp>
                    <?php }
 
                     if (has_tag()) {
-                        the_tags('Tags: ');
+                        the_tags(_e('Tags: ', 'wp-devs'));
                     }
                     ?>
                </p>
