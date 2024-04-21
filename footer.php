@@ -4,9 +4,11 @@
         <div class="copyright">
             <p>
                 <?php
-                echo get_theme_mod(
-                    'set_copyright',
-                    __('Copyright X - All Rights Reserved', 'wp-devs')
+                echo esc_html(
+                    get_theme_mod(
+                        'set_copyright',
+                        esc_html__('Copyright X - All Rights Reserved', 'wp-devs')
+                    )
                 );
                 ?>
             </p>

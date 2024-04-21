@@ -6,7 +6,7 @@ get_header();
         <div class="container">
             <h1>
                 <?php
-                _e('Search Results for:', 'wp-devs');
+                esc_html_e('Search Results for:', 'wp-devs');
                 echo get_search_query();
                 ?>
             </h1>

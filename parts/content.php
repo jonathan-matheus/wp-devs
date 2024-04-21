@@ -12,14 +12,26 @@
     <?php } ?>
 
     <div class="meta-info">
-        <p>Posted in <?php echo get_the_date(); ?> by <?php the_author_posts_link(); ?></p>
+        <p>
+            <?php
+            esc_html_e('Posted in', 'wp-devs');
+            echo get_the_date();
+            esc_html_e('by', 'wp-devs');
+            the_author_posts_link();
+            ?>
+        </p>
 
         <?php if (has_category()) { ?>
-            <p>Categories: <?php the_category(' '); ?></p>
+            <p>
+                <?php
+                esc_html_e('Categories: ', 'wp-devs');
+                the_category(' ');
+                ?>
+            </p>
         <?php } ?>
 
         <?php if (has_tag()) { ?>
-            <p><?php the_tags('Tags: '); ?></p>
+            <p><?php the_tags(esc_html__('Tags: ')); ?></p>
         <?php } ?>
     </div>
     <?php the_excerpt(); ?>

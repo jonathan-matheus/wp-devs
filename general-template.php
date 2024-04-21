@@ -7,7 +7,7 @@
 // Carrega o templete de cabeçalho
 get_header(); ?>
 <!-- Corpo -->
-<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" />
+<img src="<?php header_image(); ?>" height="<?php echo esc_attr(get_custom_header()->height); ?>" width="<?php echo esc_attr(get_custom_header()->width); ?>" />
 <div id="content" class="site-content">
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
@@ -30,7 +30,7 @@ get_header(); ?>
                         ?>
                         <p>
                             <?php
-                            _e('Nothing yet to be displayed!', 'wp-devs') ?>
+                            esc_html_e('Nothing yet to be displayed!', 'wp-devs') ?>
                         </p>
                     <?php
                     }

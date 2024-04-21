@@ -7,12 +7,12 @@
                    <?php
                     $hero_title = get_theme_mod(
                         'set_hero_title',
-                        __('Please, type some title', 'wp-devs')
+                        esc_html__('Please, type some title', 'wp-devs')
                     );
 
                     $hero_subtitle = get_theme_mod(
                         'set_hero_subtitle',
-                        __('Please, type some subtitle', 'wp-devs')
+                        esc_html__('Please, type some subtitle', 'wp-devs')
                     );
 
                     $hero_button_link = get_theme_mod(
@@ -22,7 +22,7 @@
 
                     $hero_button_text = get_theme_mod(
                         'set_hero_button_text',
-                        __('Learn More', 'wp-devs')
+                        esc_html__('Learn More', 'wp-devs')
                     );
 
                     $hero_height = get_theme_mod(
@@ -36,21 +36,21 @@
                         )
                     );
                     ?>
-                   <section class="hero" style="background-image: url('<?php echo $hero_background; ?>');">
-                       <div class="overlay" style="min-height: <?php echo $hero_height; ?>px">
+                   <section class="hero" style="background-image: url('<?php echo esc_url($hero_background); ?>');">
+                       <div class="overlay" style="min-height: <?php echo esc_attr($hero_height); ?>px">
                            <div class="container">
                                <div class="hero-items">
-                                   <h1><?php echo $hero_title; ?></h1>
+                                   <h1><?php echo esc_html($hero_title); ?></h1>
                                    <p>
-                                       <?php echo nl2br($hero_subtitle); ?>
+                                       <?php echo nl2br(esc_html($hero_subtitle)); ?>
                                    </p>
-                                   <a href="<?php echo $hero_button_link; ?>"><?php echo $hero_button_text; ?></a>
+                                   <a href="<?php echo esc_url($hero_button_link); ?>"><?php echo esc_html($hero_button_text); ?></a>
                                </div>
                            </div>
                        </div>
                    </section>
                    <section class="services">
-                       <h2><?php _e('Services', 'wp-devs'); ?></h2>
+                       <h2><?php esc_html_e('Services', 'wp-devs'); ?></h2>
                        <div class="container">
                            <div class="services-item">
                                <?php
@@ -99,7 +99,7 @@
                                 }
                             } else {
                             ?>
-                               <p><?php _e('Nothing yet to be displayed!', 'wp-devs') ?></p>
+                               <p><?php esc_html_e('Nothing yet to be displayed!', 'wp-devs') ?></p>
                            <?php
                             }
                             wp_reset_postdata();

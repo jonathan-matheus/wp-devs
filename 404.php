@@ -8,10 +8,10 @@ get_header();
             <div class="container">
                 <div class="error-404">
                     <header>
-                        <h1><?php _e('Page not found (404)', 'wp-devs') ?></h1>
+                        <h1><?php esc_html_e('Page not found (404)', 'wp-devs') ?></h1>
                         <p>
                             <?php
-                            _e(
+                            esc_html_e(
                                 'Unfortunately, the page you tried to reach does not exist on this site.',
                                 'wp-devs'
                             );
@@ -22,7 +22,7 @@ get_header();
                     <div class="error">
                         <p>
                             <?php
-                            _e(
+                            esc_html_e(
                                 'How about doing a search?',
                                 'wp-devs'
                             );
@@ -33,7 +33,7 @@ get_header();
                         the_widget(
                             'WP_Widget_Recent_Posts',
                             array(
-                                'title' => __('Latest Posts', 'wp-devs'),
+                                'title' => esc_html__('Latest Posts', 'wp-devs'),
                                 'number' => 3
                             )
                         );

@@ -5,22 +5,22 @@
              <div class="meta-info">
                  <p>
                      <?php
-                        _e('Posted in', 'wp-devs');
+                        esc_html_e('Posted in', 'wp-devs');
                         echo get_the_date();
-                        _e('by', 'wp-devs');
+                        esc_html_e('by', 'wp-devs');
                         the_author_posts_link();
                         ?>
                  </p>
                  <p>
                      <?php
-                        _e('Categories', 'wp-devs');
+                        esc_html_e('Categories', 'wp-devs');
                         ?>:
                      <?php
                         the_category(' ');
                         ?>
                  </p>
                  <p>
-                     <?php the_tags(__('Tags: ', 'wp-devs')); ?>
+                     <?php the_tags(esc_html__('Tags: ', 'wp-devs')); ?>
                  </p>
              </div>
          <?php } ?>

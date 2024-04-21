@@ -11,7 +11,7 @@
            </h3>
            <div class="meta-info">
                <p>
-                   <?php _e('by', 'wp-devs'); ?>
+                   <?php esc_html_e('by', 'wp-devs'); ?>
                    <samp>
                        <?php
                         the_author_posts_link();
@@ -19,14 +19,14 @@
                    </samp>
 
                    <?php if (has_category()) {
-                        _e('Categories', 'wp-devs');
+                        esc_html_e('Categories', 'wp-devs');
                     ?>
                        :
                        <samp><?php the_category(' '); ?></samp>
                    <?php }
 
                     if (has_tag()) {
-                        the_tags(_e('Tags: ', 'wp-devs'));
+                        the_tags(esc_html__('Tags: ', 'wp-devs'));
                     }
                     ?>
                </p>
