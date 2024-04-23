@@ -1251,3 +1251,29 @@ a img.aligncenter {
   z-index: 100000;
   /* Above WP toolbar. */
 }
+
+/* No tamanho mínimo de 768px, elementos com a classe alignfull e alignwide
+receberão margens e larguras diferentes para garantir que fiquem centralizados
+na página, e o alignwide para ficar com largura adequada para o conteúdo. */
+@media all and (min-width: 768px) {
+  .alignfull {
+    /* Margen de 30px elargido para que o elemento centralize-se na página. */
+    margin: 30px calc(50% - 50vw);
+    /* Largura máxima igual à largura total da página. */
+    max-width: 100vw;
+    /* Largura igual à largura total da página. */
+    width: 100vw;
+  }
+  .alignwide {
+    /* Margen de 30px elargido para que o elemento centralize-se na página. */
+    margin: 30px calc(25% - 25vw);
+  }
+}
+
+/**
+ * Overflow hidden para que a barra de rolagem não apareça no conteúdo principal
+ * do site ao ser exibido o conteúdo focado para usuários de leitores de tela.
+ */
+.site-content {
+  overflow: hidden;
+}
