@@ -122,8 +122,27 @@ function wpdevs_config()
     add_editor_style(
         'style-editor.css'
     );
+
+    add_theme_support(
+        'wp-block-styles'
+    );
 }
 add_action('after_setup_theme', 'wpdevs_config', 0);
+
+function wpdevs_register_block_styles()
+{
+    wp_register_style('wpdevs-block-style', get_template_directory_uri() . '/block-style.css');
+    register_block_style(
+        'core/quote',
+        [
+            'name' => 'red-quote',
+            'label' => 'Red Quote',
+            'is_default' => true,
+            'style_handle' => 'wpdevs-block-style'
+        ]
+    );
+}
+add_action('init', 'wpdevs_register_block_styles');
 
 /**
  * Registra os sidebars
