@@ -126,6 +126,26 @@ function wpdevs_config()
     add_theme_support(
         'wp-block-styles'
     );
+
+    add_theme_support(
+        'editor-color-palette',
+        [
+            [
+                'name' => __('Primary', 'wp-devs'),
+                'slug' => 'primary',
+                'color' => '#001E32'
+            ],
+            [
+                'name' => __('Secondary', 'wp-devs'),
+                'slug' => 'secondary',
+                'color' => '#CFAF07'
+            ]
+        ]
+    );
+
+    add_theme_support(
+        'disable-custom-colors'
+    );
 }
 add_action('after_setup_theme', 'wpdevs_config', 0);
 

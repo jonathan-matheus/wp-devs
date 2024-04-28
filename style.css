@@ -1277,3 +1277,29 @@ na página, e o alignwide para ficar com largura adequada para o conteúdo. */
 .site-content {
   overflow: hidden;
 }
+
+/**
+ * Define as cores de fundo e texto para os elementos com essas classes.
+ *
+ * As cores utilizadas são:
+ * - #333 para a cor de fundo (--wpdevs-black-blue) e o texto (--wpdevs-black-blue);
+ * - #f9a825 para a cor de fundo (--wpdevs-yellow) e o texto (--wpdevs-yellow).
+ *
+ * Essas classes servem para aplicar essas cores em elementos do gutenberg,
+ * de forma que o tema seja mais personalizado e fácil de modificar.
+ */
+.has-primary-background-color {
+  background-color: var(--wpdevs-black-blue);
+}
+
+.has-primary-color {
+  color: var(--wpdevs-black-blue);
+}
+
+.has-secondary-background-color {
+  background-color: var(--wpdevs-yellow);
+}
+
+.has-secondary-color {
+  color: var(--wpdevs-yellow);
+}
